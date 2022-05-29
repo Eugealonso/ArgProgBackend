@@ -1,5 +1,9 @@
 package ar.argentinaprograma.portafolio.repository;
 
-public interface ISeccionRepository {
+import ar.argentinaprograma.portafolio.dto.SeccionDto;
 
+public interface ISeccionRepository {
+	
+	SeccionDto save(SeccionDto dto);
+	void deleteById(Long id);
 }

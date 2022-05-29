@@ -2,6 +2,7 @@ package ar.argentinaprograma.portafolio.modelo;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,7 +37,7 @@ public class Seccion {
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 	
-	@OneToMany(mappedBy = "seccion")
+	@OneToMany(mappedBy = "seccion", cascade = CascadeType.ALL)
 	private List<ItemSeccion> items;
 
 }
