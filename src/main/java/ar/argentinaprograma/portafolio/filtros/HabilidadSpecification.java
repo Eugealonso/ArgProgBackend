@@ -1,6 +1,7 @@
 package ar.argentinaprograma.portafolio.filtros;
 
 import ar.argentinaprograma.portafolio.modelo.Habilidad;
+import ar.argentinaprograma.portafolio.modelo.TipoHabilidad;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +17,7 @@ public class HabilidadSpecification {
             List<Predicate> predicates = new ArrayList<>();
 
             if(tipo != null && !tipo.equals(""))
-                predicates.add(criteriaBuilder.equal(root.get("tipo"), tipo));
+                predicates.add(criteriaBuilder.equal(root.get("tipo"), TipoHabilidad.valueOf(tipo)));
 
             return criteriaBuilder.and(predicates.toArray(Predicate[]::new));
         };

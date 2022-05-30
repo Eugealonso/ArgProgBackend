@@ -14,9 +14,9 @@ public class HabilidadController {
     @Autowired
     private IHabilidadService habilidadService;
 
-    @PostMapping(value = "/crear", consumes = "application/json", produces = "application/json")
-    public HabilidadDto crearHabilidad(@RequestBody HabilidadDto habilidad){
-        habilidad = habilidadService.crearHabilidad(habilidad);
+    @PostMapping(value = "/{idUsuario}/crear", consumes = "application/json", produces = "application/json")
+    public HabilidadDto crearHabilidad(@PathVariable(value = "idUsuario") Long idUsuario, @RequestBody HabilidadDto habilidad){
+        habilidad = habilidadService.crearHabilidad(idUsuario, habilidad);
         return habilidad;
     }
 
@@ -26,8 +26,8 @@ public class HabilidadController {
         return habilidad;
     }
 
-    @DeleteMapping(value = "/eliminar", consumes = "application/json")
-    public void eliminarHabilidad(@RequestBody Long idHabilidad){
+    @DeleteMapping(value = "/eliminar/{idHabilidad}")
+    public void eliminarHabilidad(@PathVariable(value = "idHabilidad") Long idHabilidad){
         habilidadService.eliminarHabilidad(idHabilidad);
     }
 

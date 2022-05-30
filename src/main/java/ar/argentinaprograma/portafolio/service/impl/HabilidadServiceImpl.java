@@ -1,5 +1,6 @@
 package ar.argentinaprograma.portafolio.service.impl;
 
+import ar.argentinaprograma.portafolio.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +16,12 @@ public class HabilidadServiceImpl  implements IHabilidadService {
 	@Autowired
 	private IHabilidadRepository repository;
 
+	@Autowired
+	private IUsuarioRepository usuarioRepository;
+
 	@Override
-	public HabilidadDto crearHabilidad(HabilidadDto dto) {
+	public HabilidadDto crearHabilidad(Long idUsuario, HabilidadDto dto) {
+		dto.setUsuario(usuarioRepository.findById(idUsuario).orElse(null));
 		return repository.save(dto);
 	}
 
