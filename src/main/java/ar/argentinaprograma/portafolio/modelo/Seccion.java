@@ -2,17 +2,7 @@ package ar.argentinaprograma.portafolio.modelo;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -37,7 +27,8 @@ public class Seccion {
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 	
-	@OneToMany(mappedBy = "seccion", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "seccion", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OrderBy("idItemSeccion ASC")
 	private List<ItemSeccion> items;
 
 }

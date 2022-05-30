@@ -48,10 +48,4 @@ public class Usuario {
 	
 	@Column(name="descripcion")
 	private String descripcion;
-	
-	@OneToMany(mappedBy = "usuario")
-	private List<Seccion> secciones;
-	
-	@OneToMany(mappedBy = "usuario")
-	private List<Habilidad> habilidades;
 }

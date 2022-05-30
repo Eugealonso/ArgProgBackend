@@ -10,4 +10,6 @@ public interface IUsuarioRepository {
 	void deleteById(Long id);
 	
 	Optional<UsuarioDto> findByMail(String mail);
+
+	Optional<UsuarioDto> findById(Long id);
 }

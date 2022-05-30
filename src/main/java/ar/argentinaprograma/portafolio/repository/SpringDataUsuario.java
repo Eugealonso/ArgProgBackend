@@ -10,4 +10,6 @@ public interface SpringDataUsuario extends JpaRepository<Usuario, Long> {
 	
 	Optional<Usuario> findByMail(String mail);
 
+	Optional<Usuario> findById(Long id);
+
 }

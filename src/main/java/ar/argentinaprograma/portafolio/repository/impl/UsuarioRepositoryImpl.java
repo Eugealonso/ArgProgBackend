@@ -35,4 +35,9 @@ public class UsuarioRepositoryImpl implements IUsuarioRepository {
 		return repository.findByMail(mail).map(mapper::toDto);
 	}
 
+	@Override
+	public Optional<UsuarioDto> findById(Long id) {
+		return repository.findById(id).map(mapper::toDto);
+	}
+
 }

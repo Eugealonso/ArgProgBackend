@@ -7,6 +7,8 @@ import ar.argentinaprograma.portafolio.dto.UsuarioDto;
 import ar.argentinaprograma.portafolio.repository.IUsuarioRepository;
 import ar.argentinaprograma.portafolio.service.IUsuarioService;
 
+import java.util.Optional;
+
 @Component
 public class UsuarioServiceImpl implements IUsuarioService {
 
@@ -15,9 +17,8 @@ public class UsuarioServiceImpl implements IUsuarioService {
 	
 	@Override
 	public UsuarioDto login(String usuario, String pass) {
-		UsuarioDto usuarioDto=repository.findByMail(usuario).get();
-		if (usuarioDto.getPass().equals(pass)) return usuarioDto;
-		else return null;
+		Optional<UsuarioDto> usuarioDto=repository.findByMail(usuario);
+		return usuarioDto.orElse(null);
 	}
 
 }

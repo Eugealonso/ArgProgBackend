@@ -7,6 +7,8 @@ import ar.argentinaprograma.portafolio.dto.HabilidadDto;
 import ar.argentinaprograma.portafolio.repository.IHabilidadRepository;
 import ar.argentinaprograma.portafolio.service.IHabilidadService;
 
+import java.util.List;
+
 @Component
 public class HabilidadServiceImpl  implements IHabilidadService {
 	
@@ -26,6 +28,11 @@ public class HabilidadServiceImpl  implements IHabilidadService {
 	@Override
 	public void eliminarHabilidad(Long id) {
 		repository.deleteById(id);
+	}
+
+	@Override
+	public List<HabilidadDto> listarHabilidades(String tipo) {
+		return repository.findAll(tipo);
 	}
 
 }

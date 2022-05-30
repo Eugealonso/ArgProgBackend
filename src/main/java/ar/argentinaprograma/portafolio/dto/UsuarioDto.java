@@ -24,8 +24,4 @@ public class UsuarioDto {
 	private String presentacion;
 
 	private String descripcion;
-
-	private List<SeccionDto> secciones;
-
-	private List<HabilidadDto> habilidades;
 }
