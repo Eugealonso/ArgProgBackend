@@ -18,7 +18,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name="item_seccion", schema = "portafolio")
+@Table(name="item_seccion")
 public class ItemSeccion {
 
 		@Id

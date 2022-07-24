@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name="usuario", schema = "portafolio")
+@Table(name="usuario")
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE, generator="sq_usuario_gen")
