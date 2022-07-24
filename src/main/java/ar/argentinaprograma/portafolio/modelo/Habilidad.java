@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name="habilidad")
+@Table(name="habilidad", schema = "portafolio")
 public class Habilidad {
 
 	@Id
