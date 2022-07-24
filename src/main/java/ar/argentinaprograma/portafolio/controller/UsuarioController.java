@@ -6,7 +6,7 @@ import ar.argentinaprograma.portafolio.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "https://dry-cliffs-53839.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("usuarios")
 public class UsuarioController {

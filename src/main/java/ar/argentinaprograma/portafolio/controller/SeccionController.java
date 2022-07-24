@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "https://dry-cliffs-53839.herokuapp.com")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("secciones")
 public class SeccionController {
