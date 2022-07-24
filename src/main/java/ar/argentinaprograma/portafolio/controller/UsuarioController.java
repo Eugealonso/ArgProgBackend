@@ -25,4 +25,10 @@ public class UsuarioController {
         UsuarioDto usuario= usuarioService.editarUsuario(idUsuario, usuarioDto);
         return usuarioDto;
     }
+
+    @GetMapping(path = "/{idUsuario}", produces = "application/json")
+    public UsuarioDto obtenerUsuario(@PathVariable(value = "idUsuario") Long idUsuario) {
+        UsuarioDto usuario = usuarioService.obtenerUsuario(idUsuario);
+        return usuario;
+    }
 }
