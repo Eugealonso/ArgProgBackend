@@ -21,4 +21,9 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		return usuarioDto.orElse(null);
 	}
 
+	@Override
+	public UsuarioDto editarUsuario(Long idUsuario, UsuarioDto usuarioDto) {
+		return repository.save(usuarioDto);
+	}
+
 }

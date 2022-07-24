@@ -6,4 +6,5 @@ public interface IUsuarioService {
 	
 	UsuarioDto login (String usuario, String pass);
 
+	UsuarioDto editarUsuario(Long idUsuario, UsuarioDto usuarioDto);
 }
