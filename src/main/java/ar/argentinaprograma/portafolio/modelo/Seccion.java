@@ -12,7 +12,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name="seccion")
+@Table(name="seccion", schema = "portafolio")
 public class Seccion {
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE, generator="sq_seccion_gen")
