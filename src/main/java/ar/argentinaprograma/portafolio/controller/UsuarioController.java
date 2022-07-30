@@ -21,7 +21,7 @@ public class UsuarioController {
     }
 
     @PostMapping(path = "/{idUsuario}/editar", consumes = "application/json", produces = "application/json")
-    public UsuarioDto editarUsuario(@PathVariable(value = "idUsuario") Long idUsuario, UsuarioDto usuarioDto) {
+    public UsuarioDto editarUsuario(@PathVariable(value = "idUsuario") Long idUsuario, @RequestBody UsuarioDto usuarioDto) {
         UsuarioDto usuario= usuarioService.editarUsuario(idUsuario, usuarioDto);
         return usuarioDto;
     }

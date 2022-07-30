@@ -17,9 +17,9 @@ public class UsuarioDto {
 
 	private String nombreApellido;
 
-	private byte[] foto;
+	private String foto;
 
-	private byte[] fotoPortada;
+	private String fotoPortada;
 
 	private String presentacion;
 
