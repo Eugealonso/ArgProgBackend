@@ -48,4 +48,10 @@ public class Usuario {
 	
 	@Column(name="descripcion")
 	private String descripcion;
+
+	@Column(name = "url_linkedin")
+	private String urlLinkedin;
+
+	@Column(name = "url_github")
+	private String urlGithub;
 }
