@@ -26,4 +26,9 @@ public class UsuarioServiceImpl implements IUsuarioService {
 		return repository.save(usuarioDto);
 	}
 
+	@Override
+	public UsuarioDto obtenerUsuario(Long idUsuario) {
+		return repository.findById(idUsuario).orElse(null);
+	}
+
 }

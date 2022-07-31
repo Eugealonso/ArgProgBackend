@@ -38,14 +38,20 @@ public class Usuario {
 	private String nombreApellido;
 	
 	@Column(name="foto")
-	private byte[] foto;
+	private String foto;
 	
 	@Column(name="foto_portada")
-	private byte[] fotoPortada;
+	private String fotoPortada;
 	
 	@Column(name="presentacion")
 	private String presentacion;
 	
 	@Column(name="descripcion")
 	private String descripcion;
+
+	@Column(name = "url_linkedin")
+	private String urlLinkedin;
+
+	@Column(name = "url_github")
+	private String urlGithub;
 }

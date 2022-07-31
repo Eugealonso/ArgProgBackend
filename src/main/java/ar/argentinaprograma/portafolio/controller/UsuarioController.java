@@ -6,7 +6,7 @@ import ar.argentinaprograma.portafolio.service.IUsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("usuarios")
 public class UsuarioController {
@@ -21,8 +21,14 @@ public class UsuarioController {
     }
 
     @PostMapping(path = "/{idUsuario}/editar", consumes = "application/json", produces = "application/json")
-    public UsuarioDto editarUsuario(@PathVariable(value = "idUsuario") Long idUsuario, UsuarioDto usuarioDto) {
+    public UsuarioDto editarUsuario(@PathVariable(value = "idUsuario") Long idUsuario, @RequestBody UsuarioDto usuarioDto) {
         UsuarioDto usuario= usuarioService.editarUsuario(idUsuario, usuarioDto);
         return usuarioDto;
+    }
+
+    @GetMapping(path = "/{idUsuario}", produces = "application/json")
+    public UsuarioDto obtenerUsuario(@PathVariable(value = "idUsuario") Long idUsuario) {
+        UsuarioDto usuario = usuarioService.obtenerUsuario(idUsuario);
+        return usuario;
     }
 }
